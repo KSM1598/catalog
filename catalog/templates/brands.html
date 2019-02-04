@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+</head>
+<body>
+
+<h1 align="center">NAIL POLISH BRANDS</h1><br>
+
+<div>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul class=flashes>
+{% for message in messages %}
+<li>{{ message }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+	<h3 align="right"><a href="{{url_for('gdisconnect')}}">LOGOUT</a></h3>
+</div>
+
+<a href="{{url_for('newBrand')}}">CREATE NEW BRAND</a><br><br><br>
+
+{% for i in brands %}
+<div class="A">
+	{{i.id}}
+	{{')' }}	
+	<a href="{{url_for('brandItemsMenu',brand_id=i.id)}}">{{i.name}}</a><br><br>
+	<a href="{{ url_for('editBrand',brand_id=i.id) }}">EDIT</a>
+	<a href="{{ url_for('deleteBrand',brand_id=i.id) }}">DELETE</a><br><br>
+</div>
+<br>
+{% endfor %}
+
+</body>
+</html>

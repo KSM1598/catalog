@@ -1,0 +1,16 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+</head>
+<script>
+function myFunction() {
+alert('You are not authorized to delete this Brand. Please create your own Brand in order to delete.');
+}
+</script>
+<body onload='myFunction()'>
+	<br><br><br><br>
+	<div align="center">
+		<a href="{{ url_for('brandsMenu') }}">Cancel</a>
+	</div>
+</body>
+</html>

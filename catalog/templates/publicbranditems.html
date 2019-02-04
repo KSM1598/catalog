@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+</head>
+<body>
+
+	<div>
+		<h1 align="center">{{nail_polish_brands.name}}</h1>
+	</div>
+
+	<div>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				<ul class=flashes>
+					{% for message in messages %}
+						<li>{{ message }}</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+		{% endwith %}
+	</div>
+	<br>
+	<br>
+	<div align="right">
+	<a href="{{url_for('brandsMenu')}}" align="right" >GO BACK</a>
+	</div>
+<div class="A">
+	{% for i in items %}
+		<div>
+			{{i.id}}
+			{{')' }}
+			{{i.name}}
+			<p>{{i.price}}</p>
+		</div>
+		<div>
+			<p>{{i.description}}</p>
+		</div>	
+		<br><br>
+	{% endfor %}
+</div>
+</body>
+</html>

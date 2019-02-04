@@ -1,0 +1,17 @@
+body{	
+	background-repeat: no-repeat;
+	background-image: url("/static/bg2.jpeg");
+	background-size: cover;
+	background-position: fixed;
+	height: 100%;
+	width: 100%;
+	color: #E4287C;
+}
+.A{
+	text-align: left;
+	color: #F778A1;
+}
+h1{
+	font-size: 200%;
+	background-color: #F9B7FF;
+}
